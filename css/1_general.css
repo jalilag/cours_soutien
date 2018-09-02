@@ -1,0 +1,89 @@
+QWidget {
+	font-size:15px;
+}
+
+.label {
+	font-weight: bold;
+	margin: 0.2em 0 0.2em 0; 
+}
+.cred { 
+	color:#fff;
+}
+.black {color: #000;}
+.label2 {
+	qproperty-alignment: AlignCenter;
+	font-weight: bold;
+	font-size: 8px;
+	padding-left: 0;
+	margin:0;
+}
+
+.center {
+	qproperty-alignment: AlignCenter;	
+}
+
+.field {
+
+	width: 8em;
+	margin:0.2em;
+	padding:0.2em;
+}
+.field_min {
+	width: 4em;
+	margin:0.2em;
+	padding:0.2em;
+}
+
+.field:focus {
+	border: 1px solid #000;
+
+}
+.field2 {
+	qproperty-alignment: AlignCenter;
+	font-size: 10px;
+	font-weight:bold;
+	padding-left: 0;
+	margin:0;
+}
+
+.tab_title {
+
+	font-weight: bold;
+}
+
+.tab_field {
+}
+
+.test1{
+	border-image: url("img/ok.png") center;
+}
+.max_line_width {
+	max-width: 1000px;
+	max-height: 5px;
+	min-height: 5px;
+	background:#287594;
+}
+
+.max_line_height {
+	max-height: 1000px;
+	max-width: 5px;
+	min-width: 5px;
+	background: #287594;
+
+}
+.line_v{
+	max-width: 2px;
+	min-width: 2px;
+	background: #000;
+	margin: 0.1em 0.5em 0.1em 5em;
+}
+.line_h{
+	max-height: 2px;
+	min-height: 2px;
+	background: #000;
+	margin: 1em 0.5em 1em 0.5em;
+}
+
+.add_leftmargin{
+	margin-left: 5em;
+}

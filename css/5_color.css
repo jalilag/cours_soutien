@@ -1,0 +1,20 @@
+.light_blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #4DD0E1, stop:1 #00BCD4);}
+.light_blue:hover{background-color:#80DEEA;}
+
+.heavy_blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #0097A7, stop:1 #006064);}
+.heavy_blue:hover{background-color:#0097A7;}
+
+.blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #0090C1, stop:1 #00769E);}
+.blue:hover{background-color:#5CB8D7;}
+
+.green{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #73E373, stop:1 #348B34);}
+.green:hover{background-color:#73E373;}
+
+.purple{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #804B9D, stop:1 #5B2F74);}
+.purple:hover{background-color:#AE6FD0;}
+
+.red {background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #FF7043, stop:1 #D84315)}
+.red:hover {background-color:#FF7043;}
+
+.yellow {background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #D1AA5B, stop:1 #8C713D)}
+.yellow:hover {background-color:#FFCF6F;}

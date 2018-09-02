@@ -1,0 +1,51 @@
+.arrow_right{qproperty-icon: url("img/arrow_right.png");}
+.arrow_up{qproperty-icon: url("img/arrow_up.png");}
+.config{qproperty-icon: url("img/config.png");}
+.circuit{qproperty-icon: url("img/circuit.png");}
+.communication{qproperty-icon: url("img/communication.png");}
+.connect{qproperty-icon: url("img/connect.png");}
+.disconnect{qproperty-icon: url("img/disconnect.png");}
+.del{qproperty-icon: url("img/del.png");}
+.edit{qproperty-icon: url("img/edit.png");}
+.equipment{qproperty-icon: url("img/equipment.png");}
+.expansion{qproperty-icon: url("img/expansion.png");}
+.info{qproperty-icon: url("img/info.png");}
+.op{qproperty-icon: url("img/op.png");}
+.option{qproperty-icon: url("img/option.png");}
+.module{qproperty-icon: url("img/monitor.png");}
+.monitoring{qproperty-icon: url("img/monitoring.png");}
+.resume{qproperty-icon: url("img/resume.png");}
+.rotate{qproperty-icon: url("img/rotate.png");}
+.start{qproperty-icon: url("img/start.png");}
+.stop{qproperty-icon: url("img/stop.png");}
+.test{qproperty-icon: url("img/test.png");}
+.update{qproperty-icon: url("img/update.png");}
+.visu{qproperty-icon: url("img/visu.png");}
+
+.ok {qproperty-icon: url("img/ok.png");}
+.in_out{qproperty-icon: url("img/in_out.png");}
+.add {background: url("img/24/add_1.png") top center no-repeat; }
+.add:hover {background: url("img/24/add_2.png") top center no-repeat;}
+
+.i_yes{image: url("img/yes.png");}
+.i_no{image: url("img/no.png");}
+.i_what{image: url("img/what.png");}
+
+.i_pump{image: url("img/process/pump.png");}
+.i_valve{image: url("img/process/valve.png");}
+.i_icon {
+	font-size: 24px;
+}
+.min_icon {
+	font-size: 15px;
+	text-align: left;
+}
+.max_icon {
+	font-size: 40px;
+
+}
+.big_icon {
+	font-size:70px;
+	text-align: center;
+	/*qproperty-alignment: AlignCenter;*/
+}

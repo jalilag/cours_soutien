@@ -1,0 +1,273 @@
+QWidget {
+	font-size:15px;
+}
+
+.label {
+	font-weight: bold;
+	margin: 0.2em 0 0.2em 0; 
+}
+.cred { 
+	color:#fff;
+}
+.black {color: #000;}
+.label2 {
+	qproperty-alignment: AlignCenter;
+	font-weight: bold;
+	font-size: 8px;
+	padding-left: 0;
+	margin:0;
+}
+
+.center {
+	qproperty-alignment: AlignCenter;	
+}
+
+.field {
+
+	width: 8em;
+	margin:0.2em;
+	padding:0.2em;
+}
+.field_min {
+	width: 4em;
+	margin:0.2em;
+	padding:0.2em;
+}
+
+.field:focus {
+	border: 1px solid #000;
+
+}
+.field2 {
+	qproperty-alignment: AlignCenter;
+	font-size: 10px;
+	font-weight:bold;
+	padding-left: 0;
+	margin:0;
+}
+
+.tab_title {
+
+	font-weight: bold;
+}
+
+.tab_field {
+}
+
+.test1{
+	border-image: url("img/ok.png") center;
+}
+.max_line_width {
+	max-width: 1000px;
+	max-height: 5px;
+	min-height: 5px;
+	background:#287594;
+}
+
+.max_line_height {
+	max-height: 1000px;
+	max-width: 5px;
+	min-width: 5px;
+	background: #287594;
+
+}
+.line_v{
+	max-width: 2px;
+	min-width: 2px;
+	background: #000;
+	margin: 0.1em 0.5em 0.1em 5em;
+}
+.line_h{
+	max-height: 2px;
+	min-height: 2px;
+	background: #000;
+	margin: 1em 0.5em 1em 0.5em;
+}
+
+.add_leftmargin{
+	margin-left: 5em;
+}
+.stdBox  {
+	margin: 0.5em;
+	padding-bottom:0.2em;
+	border: 0.2em solid;
+	border-radius:0.7em;
+}
+.stdBox > .boxTitle {
+	margin:0 0 0.2em 0;
+	width:100%;
+	padding-bottom: 0.2em;
+	padding: 0.2em;
+	font-weight: bold;
+	margin-top:0;
+	qproperty-alignment: AlignCenter;
+	color:#fff;
+	font-size:15px;
+}
+.stdBoxLegend {
+	border: 0.2em solid;
+	border-radius:0.7em;	
+}
+.stdBoxLegend > .boxLegend {
+	margin:0;
+	padding:0;
+	width:100%;
+	font-weight: bold;
+	qproperty-alignment: AlignCenter;
+	color:#fff;
+	font-size:15px;
+	background:qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #212121, stop:1 #757575);
+}
+.stdBox * {
+	margin-left:0.2em;
+}
+
+
+.menuBox { border-color:#006064;}
+.menuBox > .boxTitle {background:qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #006064, stop:1 #0097A7);}
+.mainBox {border-color:#212121;}
+.mainBox > .boxTitle {background:qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #212121, stop:1 #757575);}
+
+.stdSubBox {
+	/*padding:0.1em;*/
+	border: 0.1em solid #000;
+	border-radius:0.4em;
+	margin: 0.2em 0.5em 0.2em 0.5em;
+/*	qproperty-alignment: AlignTop;
+*/}
+.stdSubBox * {
+	margin-left: 0.2em;	
+}
+.stdSubBox > .subBoxTitle {
+	margin:0;
+	font-size:13px;
+	font-weight: bold;
+	width:100%;
+	background:qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #263238, stop:1 #546E7A); 
+	padding: 0.1em 0 0.1em 0.5em;
+	color:#fff;
+}
+
+.movableBox {
+	max-height:100px;
+	max-width:100px;
+	text-align: center;
+}
+
+.boxVisu {
+	qproperty-alignment: AlignTop;
+	border: 2px #000 solid;
+
+}
+
+.radioBox {
+    border: 3px solid #000;
+    border-radius: 9px;
+ 
+    /*background: #4ACFDB;*/
+    margin: 0.5em 0.5em 0.5em 0;
+}
+
+
+
+.stdButIcon {
+	/*icon-size:24px;*/
+	margin-top: 0.2em;
+	background: top center no-repeat;
+	border:0;
+	width:36px;
+	padding-top:7px;
+}
+.stdButtonMenu {
+	font-size:14px;
+	icon-size:24px;
+	color:#000;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.2em 0.4em 0.2em 0.3em;
+	margin:0.3em 0.4em 0em 0.4em;
+	border-radius: 0.5em;
+}
+.butFirst {font-size:14px;}
+.stdButton {
+	font-size:13px;
+	icon-size:24px;
+	color:#000;
+	font-weight: bold;
+	text-align: center;
+	padding: 0.2em;
+	margin:0.3em 0.4em 0.2em 0.4em;
+	border-radius: 0.5em;
+}
+
+.arrow_right{qproperty-icon: url("img/arrow_right.png");}
+.arrow_up{qproperty-icon: url("img/arrow_up.png");}
+.config{qproperty-icon: url("img/config.png");}
+.circuit{qproperty-icon: url("img/circuit.png");}
+.communication{qproperty-icon: url("img/communication.png");}
+.connect{qproperty-icon: url("img/connect.png");}
+.disconnect{qproperty-icon: url("img/disconnect.png");}
+.del{qproperty-icon: url("img/del.png");}
+.edit{qproperty-icon: url("img/edit.png");}
+.equipment{qproperty-icon: url("img/equipment.png");}
+.expansion{qproperty-icon: url("img/expansion.png");}
+.info{qproperty-icon: url("img/info.png");}
+.op{qproperty-icon: url("img/op.png");}
+.option{qproperty-icon: url("img/option.png");}
+.module{qproperty-icon: url("img/monitor.png");}
+.monitoring{qproperty-icon: url("img/monitoring.png");}
+.resume{qproperty-icon: url("img/resume.png");}
+.rotate{qproperty-icon: url("img/rotate.png");}
+.start{qproperty-icon: url("img/start.png");}
+.stop{qproperty-icon: url("img/stop.png");}
+.test{qproperty-icon: url("img/test.png");}
+.update{qproperty-icon: url("img/update.png");}
+.visu{qproperty-icon: url("img/visu.png");}
+
+.ok {qproperty-icon: url("img/ok.png");}
+.in_out{qproperty-icon: url("img/in_out.png");}
+.add {background: url("img/24/add_1.png") top center no-repeat; }
+.add:hover {background: url("img/24/add_2.png") top center no-repeat;}
+
+.i_yes{image: url("img/yes.png");}
+.i_no{image: url("img/no.png");}
+.i_what{image: url("img/what.png");}
+
+.i_pump{image: url("img/process/pump.png");}
+.i_valve{image: url("img/process/valve.png");}
+.i_icon {
+	font-size: 24px;
+}
+.min_icon {
+	font-size: 15px;
+	text-align: left;
+}
+.max_icon {
+	font-size: 40px;
+
+}
+.big_icon {
+	font-size:70px;
+	text-align: center;
+	/*qproperty-alignment: AlignCenter;*/
+}
+.light_blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #4DD0E1, stop:1 #00BCD4);}
+.light_blue:hover{background-color:#80DEEA;}
+
+.heavy_blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #0097A7, stop:1 #006064);}
+.heavy_blue:hover{background-color:#0097A7;}
+
+.blue{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #0090C1, stop:1 #00769E);}
+.blue:hover{background-color:#5CB8D7;}
+
+.green{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #73E373, stop:1 #348B34);}
+.green:hover{background-color:#73E373;}
+
+.purple{ background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #804B9D, stop:1 #5B2F74);}
+.purple:hover{background-color:#AE6FD0;}
+
+.red {background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #FF7043, stop:1 #D84315)}
+.red:hover {background-color:#FF7043;}
+
+.yellow {background: qlineargradient(x1:0, y1:0.5, x2:0, y2:1, stop:0 #D1AA5B, stop:1 #8C713D)}
+.yellow:hover {background-color:#FFCF6F;}
