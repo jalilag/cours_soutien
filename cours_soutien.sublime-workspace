@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"fr",
+				"fromString\tmodule"
+			],
+			[
+				"setCur",
+				"setCurrentData\tfunction"
+			],
+			[
+				"dis",
+				"discount\tstatement"
+			],
+			[
+				"sig",
+				"sig_price_change"
+			],
+			[
+				"lesson",
+				"lesson_id"
+			],
+			[
+				"setChec",
+				"setChecked\tmodule"
+			],
+			[
+				"setMini",
+				"setMinimumDate\tmodule"
+			],
+			[
+				"is",
+				"isChecked\tmodule"
+			],
+			[
 				"view_box",
 				"view_box_lessons_list\tfunction"
 			],
@@ -202,10 +234,6 @@
 			[
 				"WA_Tra",
 				"WA_TransparentForMouseEvents\tinstance"
-			],
-			[
-				"setMini",
-				"setMinimumSize\tfunction"
 			]
 		]
 	},
@@ -224,7 +252,7 @@
 			"file": "views.py",
 			"settings":
 			{
-				"buffer_size": 8794,
+				"buffer_size": 11590,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -233,7 +261,16 @@
 			"file": "signals.py",
 			"settings":
 			{
-				"buffer_size": 1255,
+				"buffer_size": 1710,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "py_lib/user_qt.py",
+			"settings":
+			{
+				"buffer_size": 16838,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -242,7 +279,7 @@
 			"file": "py_lib/user_sqlite.py",
 			"settings":
 			{
-				"buffer_size": 4532,
+				"buffer_size": 4639,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -252,6 +289,26 @@
 			"settings":
 			{
 				"buffer_size": 166,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 32 files for \"des niveau\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n   11  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des matières\",connect2=[\"clicked\",self.view_box_lessons_list]))\n   12  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajout/mise à jour niveau\",connect2=[\"clicked\",self.view_box_levels_create]))\n   13: \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des niveau\",connect2=[\"clicked\",self.view_box_levels_list]))\n   14  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajouter un paiement\",connect2=[\"clicked\",self.view_box_payments_create]))\n   15  \t\n   ..\n  122  \t\tself.tools_remove_items(self.content_grid)\n  123  \t\tgrid = self.content_grid\n  124: \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des niveaux\"),0,0,1,-1)\n  125  \t\tlevels = self.bdd.request(\"SELECT * FROM levels\")\n  126  \t\tif len(levels) == 0:\n\n2 matches in 1 file\n\n\nSearching 32 files for \"format\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\error.py:\n   24  \t\t\t\tmsg = self.u.utxt[self.errors[err_num][\"msg\"]][self.u.ulang]\n   25  \t\t\telse: msg = self.errors[err_num][\"msg\"]\n   26: \t\t\tmsg = '0x{:04x}'.format(err_num) + \" : \" +msg\n   27  \t\t\tif console:\n   28  \t\t\t\tif fields is not None:\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n  160  \t\tgrid.addWidget(self.u.UQcheckbox(checked=True,exclusive=True,name_id=\"price_30\",style=\"label\",title=str(items[0][\"price_30\"]) + \" MAD\",connect2=[\"toggled\",self.sig_price_change]),4,1)\n  161  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Mois concerné\"),5,0)\n  162: \t\tgrid.addWidget(self.u.UQdateedit(name_id=\"selected_period\",popup=True,date_format=\"MMMM yyyy\"),5,1)\n  163  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Remise (MAD)\"),6,0)\n  164  \t\tgrid.addWidget(self.u.UQtxtedit(name_id=\"discount\",title=\"0\",style=\"field\",connect2=[\"changed\",self.sig_price_change]),6,1)\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_qt.py:\n   18  \t\tQMessageBox.critical(parent,title,corpus,QMessageBox.Ok)\n   19  \tif qtype == \"info\":\n   20: \t\tQMessageBox.information(parent,title,corpus,QMessageBox.Ok)\t\t\t\t\n   21  \tif qtype == \"question\":\n   22  \t\tr = QMessageBox.question(parent,title,corpus,QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel, QMessageBox.Cancel)\n   ..\n  339  \t\tpopup = kwargs.get(\"popup\",None)\n  340  \t\tself.setMinimumDate(QDate(2018,9,1))\n  341: \t\tdate_format = kwargs.get(\"date_format\",None)\n  342  \t\tif style is not None: self.setProperty(\"class\",style)\n  343  \t\tif popup is not None: \n  344  \t\t\tif popup == True: self.setCalendarPopup(True)\n  345: \t\tif date_format is not None: self.setDisplayFormat(date_format)\n  346  \tdef txt(self):\n  347  \t\treturn self.date().toString('dd-MM-yyyy')\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sklearn.py:\n   51  \t\t\tfor ii,jj in clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()].items():\n   52  \t\t\t\tif isinstance(jj,str): print(ii,\": \",jj)\n   53: \t\t\t\telse: print(ii,\": {0:9.9f}\".format(jj))\n   54  \t\t\tself.params = clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()]\n   55  \t\telse:\n   ..\n   81  \t\t\tplt.xlabel(\"Flowrates (m3/h)\")\n   82  \t\t\tplt.ylabel(\"Relative uncertainty%\")\n   83: \t\t\tplt.title(model + \" model\" + \" -> \"+\"{:.2%}\".format(s))\n   84  \n   85  \t\t\tplt.grid()\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sqlite.py:\n  140  \t\treturn N\n  141  \n  142: \tdef format_array(self,data):\n  143  \t\twhile (isinstance(data, list) or isinstance(data, tuple)) and len(data) == 1: data = data[0]\n  144  \t\treturn data\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_tdms.py:\n    2  \n    3  class UTdms(TdmsFile):\n    4: \t\"\"\"Classe gérant les formats de fichier tdms\n    5  \n    6  \tCette classe hérite de la classe TdmsFile de la librairie nptdms\n\n12 matches across 6 files\n",
+			"settings":
+			{
+				"buffer_size": 3967,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "error.py",
+			"settings":
+			{
+				"buffer_size": 1445,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -259,7 +316,7 @@
 			"file": "public/lang.py",
 			"settings":
 			{
-				"buffer_size": 345,
+				"buffer_size": 594,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -436,6 +493,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"format",
+			"sig_change",
+			"des niveau",
 			"connect",
 			"style=\"connect",
 			"connect",
@@ -477,7 +537,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -493,8 +553,8 @@
 						"selection":
 						[
 							[
-								103,
-								103
+								104,
+								104
 							]
 						],
 						"settings":
@@ -507,7 +567,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -516,15 +576,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8794,
+						"buffer_size": 11590,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8344,
-								8344
+								11473,
+								11473
 							]
 						],
 						"settings":
@@ -546,6 +606,14 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								}
 							],
 							"git_gutter_is_enabled": true,
@@ -553,10 +621,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2800.0,
+						"translation.y": 3606.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -565,15 +633,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1255,
+						"buffer_size": 1710,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								195,
-								195
+								106,
+								110
 							]
 						],
 						"settings":
@@ -587,6 +655,14 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								}
 							],
 							"git_gutter_is_enabled": true,
@@ -594,27 +670,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 60.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "py_lib/user_sqlite.py",
+					"file": "py_lib/user_qt.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4532,
+						"buffer_size": 16838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1548,
-								1548
+								425,
+								497
 							]
 						],
 						"settings":
@@ -624,6 +700,55 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "py_lib/user_sqlite.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4639,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2002,
+								2002
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								},
 								{
 									"characters": ".",
@@ -638,11 +763,11 @@
 						"translation.y": 834.4,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "cours_soutien.py",
 					"semi_transient": false,
 					"settings":
@@ -654,12 +779,23 @@
 						"selection":
 						[
 							[
-								78,
-								78
+								166,
+								166
 							]
 						],
 						"settings":
 						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
 							"git_gutter_is_enabled": true,
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
 						},
@@ -667,24 +803,124 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3967,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										467,
+										477
+									],
+									[
+										838,
+										848
+									],
+									[
+										1226,
+										1232
+									],
+									[
+										1738,
+										1744
+									],
+									[
+										2171,
+										2177
+									],
+									[
+										2490,
+										2496
+									],
+									[
+										2516,
+										2522
+									],
+									[
+										2698,
+										2704
+									],
+									[
+										2733,
+										2739
+									],
+									[
+										2745,
+										2751
+									],
+									[
+										3106,
+										3112
+									],
+									[
+										3376,
+										3382
+									],
+									[
+										3538,
+										3544
+									],
+									[
+										3835,
+										3841
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								2681,
+								2687
+							]
+						],
+						"settings":
+						{
+							"default_dir": "C:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien",
+							"detect_indentation": false,
+							"git_gutter_is_enabled": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 547.2,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "public/lang.py",
+					"buffer": 7,
+					"file": "error.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 345,
+						"buffer_size": 1445,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								343,
-								343
+								1090,
+								1090
 							]
 						],
 						"settings":
@@ -694,10 +930,51 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
+						"translation.y": 148.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "public/lang.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 594,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								262,
+								262
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -763,6 +1040,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"user",
+				"py_lib\\user_qt.py"
+			],
 			[
 				"sig",
 				"signals.py"
@@ -840,10 +1121,6 @@
 				"py_lib\\user_sqlite.py"
 			],
 			[
-				"user",
-				"py_lib\\user_sqlite.py"
-			],
-			[
 				"tyle",
 				"public\\app_style.py"
 			],
@@ -898,7 +1175,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\agoum\\Documents\\Programmation\\Python\\remote_msg\\remote_msgs.sublime-project"
+				"C:\\Users\\agoum\\Documents\\Programmation\\Python\\maria_mode\\maria_mode.sublime-project"
 			]
 		],
 		"width": 475.2

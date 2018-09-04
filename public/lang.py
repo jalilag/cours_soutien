@@ -10,4 +10,11 @@ txt = {
 	"price_15":{"fr":"Prix derniere quinzaine"},
 	"price_30": {"fr":"Prix mois"},
 	"level": {"fr":"Niveau"},
+	"discount": {"fr":"Remise"},
+	"user": {"fr":"Client"},
+	"price_duration": {"fr":"Type d'abonnement"},
+	"price":{"fr":"Prix"},
+	"total_price":{"fr":"Prix total"},
+	"selected_period":{"fr":"Mois concerné"},
+	"payment_date":{"fr":"Date de paiement"},
 }

@@ -28,7 +28,6 @@ class Tools:
 			if layGrid.get_widget_by_pos(line,col) is not None:
 				layGrid.get_widget_by_pos(line,col).setParent(None)
 
-
 	def tools_load_lang(self):
 		bdd_lang = self.bdd.select("Configuration","val",u_where="name='LANG_CHOOSE'")[0]
 		if int(bdd_lang) == 0: self.u.ulang = "fr"

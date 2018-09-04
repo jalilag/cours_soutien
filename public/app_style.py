@@ -85,6 +85,7 @@ sty = {
 	"LAB_UNI_CIRCUIT": 	{"title":"UNI_CIRCUIT","style":"label"},
 	"LAB_VAL": 			{"title":"VAL","style":"label"},
 
+	"IMG_TEMP": 		{"style":"i_icon i_temp"},
 	"IMG_NO":			{"style":"i_icon i_no"},
 	"IMG_NO_MIN":		{"style":"min_icon i_no"},
 	"IMG_PUMP":			{"style":"max_icon i_pump"},

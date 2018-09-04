@@ -9,12 +9,10 @@ import pynput.mouse as pymouse
 import pynput.keyboard as pykeyboard
 
 class Signals:
-	
-	def sig_change(self,table_name,field,func):
+	def sig_change(self,field,func):
 		grid = self.content_grid
 		w = self.content_grid.get_widget_by_name(field)
 		if w is not None: 
-			s = w.currentData()
 			func(w.currentData())
 
 	def sig_create(self,table_name,field_id,func=None):
@@ -37,3 +35,16 @@ class Signals:
 	def sig_del_field(self,table_name,where,callback = None):
 		self.bdd.delete(table_name,where)
 		self.tools_callback(callback)
+
+	def sig_price_change(self):
+		grid = self.content_grid
+		price_30 = grid.get_widget_by_name("price_30").isChecked()
+		discount = grid.get_widget_by_name("discount").txt()
+		lesson_id = grid.get_widget_by_name("lesson_id").txt()
+		price = self.bdd.request("SELECT price_15,price_30 FROM lessons WHERE lesson_id="+str(lesson_id),True)[0][price_30]
+		try:
+			discount = float(discount)
+		except:
+			discount = 0
+		price -= discount
+		grid.get_widget_by_name("total_price").setText(str(price))
