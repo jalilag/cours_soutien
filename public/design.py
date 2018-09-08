@@ -11,5 +11,4 @@ class Design:
 			parent_grid.addWidget(Grid,row)
 		return layGrid
 
-	# def form(self,lay,d):
 

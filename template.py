@@ -6,10 +6,9 @@ from PyQt5.QtGui import QPixmap,QPainter,QPen,QColor
 
 class Template:
 	def template_create_menu_grid(self,app_target):
-		menu_grid = self.u.UQvboxlayout()
+		menu_grid = self.u.UQgridlayout()
 		menuGridWidget = self.u.UQframebox(style="stdBox menuBox",parent=app_target)
 		menuGridWidget.setLayout(menu_grid)
-		print(type(menuGridWidget))
 		return menu_grid
 
 	def template_create_content_grid(self,app_target):

@@ -9,17 +9,17 @@ from PyQt5.QtCore import Qt
 
 class Views:
 	def view_menu(self):
-		self.menu_grid.addWidget(self.u.UQtxt("MENU_STD_TITLE",title="Choisissez une action"))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour client",connect2=["clicked",self.view_box_users_create]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des clients",connect2=["clicked",self.view_box_users_list]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour matière",connect2=["clicked",self.view_box_lessons_create]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des matières",connect2=["clicked",self.view_box_lessons_list]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour niveau",connect2=["clicked",self.view_box_levels_create]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des niveaux",connect2=["clicked",self.view_box_levels_list]))
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajouter un paiement",connect2=["clicked",self.view_box_payments_create]))
-		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_payments_list]))
-		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_barcode_create]))
-	
+		self.menu_grid.addWidget(self.u.UQtxt("MENU_STD_TITLE",title="Choisissez une action"),0,0,1,-1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour client",connect2=["clicked",self.view_box_users_create]),1,0)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des clients",connect2=["clicked",self.view_box_users_list]),1,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour matière",connect2=["clicked",self.view_box_lessons_create]),2,0)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des matières",connect2=["clicked",self.view_box_lessons_list]),2,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour niveau",connect2=["clicked",self.view_box_levels_create]),3,0)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des niveaux",connect2=["clicked",self.view_box_levels_list]),3,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajouter un paiement",connect2=["clicked",self.view_box_payments_create]),4,0)
+		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_payments_list]),4,1)
+		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_barcode_create]),5,0)
+
 	def view_box_users_create(self,user_id):
 		self.tools_remove_items(self.content_grid)
 		grid = self.content_grid
