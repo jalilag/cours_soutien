@@ -211,20 +211,25 @@ class Views:
 		grid = self.content_grid
 		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title="Générer des codes barres"),0,0,1,-1)
 		items = self.bdd.request("SELECT printf('%s %s',firstname,lastname),user_id FROM users",True)
-		grid.addWidget(self.u.UQcombo(style="label",items=items),1,0,1,-1)
-		w = self.view_user_card(str(items[0][1]))
+		grid.addWidget(self.u.UQcombo(name_id="user_id",style="label",items=items),1,0,)
+		subgrid = self.u.UQvboxlayout()
+		w = self.u.UQwidget()
+		w.setLayout(subgrid)
+		grid.addWidget(self.u.UQbut(style="STD_BUTTON",title="Ajouter",connect2=["clicked",partial(self.sig_add_user,subgrid)]),1,1)
 		grid.addWidget(w,2,0,1,-1)
-		grid.addWidget(self.u.UQbut(style="STD_BUTTON",title="Générer",connect2=["clicked",partial(self.u.print_widget,grid.parentWidget())]),3,0)
+		# w = self.view_user_card(str(items[0][1]))
+		grid.addWidget(w,2,0,1,-1)
+		grid.addWidget(self.u.UQbut(style="STD_BUTTON",title="Générer",connect2=["clicked",partial(self.u.print_widget_as_pdf,w)]),3,0)
 
 	def view_user_card(self,user_id):
 		grid = self.u.UQgridlayout()
-		w = self.u.UQframebox(style="stdSubBox")
+		w = self.u.UQframebox()
 		w.setLayout(grid)
 		user = self.bdd.request("SELECT * FROM users WHERE user_id="+user_id)[0]
 		grid.addWidget(self.u.UQtxt(style="label", title=user["firstname"] + " " + user["lastname"]),0,0,1,-1)
-		ean = barcode.get_barcode_class(u'ean8')
+		ean = barcode.get_barcode_class(u'ean13')
 		d = ''.join(user["registered_date"].split('-')) + str(user["user_id"])
-		print(d)
+		d = (13-len(d))*'1'+d
 		code = ean(d,writer=ImageWriter())
 		fullname = code.save("img/temp")
 		l = self.u.UQtxt(style="center")

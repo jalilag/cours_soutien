@@ -48,3 +48,15 @@ class Signals:
 			discount = 0
 		price -= discount
 		grid.get_widget_by_name("total_price").setText(str(price))
+
+	def sig_add_user(self,subgrid):
+		grid = self.content_grid
+		user_id = grid.get_widget_by_name("user_id").currentData()
+		if subgrid.get_widget_by_name(user_id) is not None: return
+		user_name = self.bdd.request("SELECT printf('%s %s',firstname,lastname) as name FROM users WHERE user_id="+str(user_id),True)[0][0]
+		w = self.u.UQwidget(name_id=str(user_id))
+		subgrid.addWidget(w)
+		horgrid = self.u.UQhboxlayout()
+		w.setLayout(horgrid)
+		horgrid.addWidget(self.u.UQtxt(style="field",title=user_name))
+		horgrid.addWidget(self.u.UQbut("BUT_DEL",connect2=['clicked',partial(self.tools_remove_item,subgrid,None,None,user_id)]))
