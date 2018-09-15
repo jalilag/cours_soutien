@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"view",
+				"view_box_users_list\tfunction"
+			],
+			[
 				"sig",
 				"sig_del_widget"
 			],
@@ -272,7 +276,7 @@
 			"file": "views.py",
 			"settings":
 			{
-				"buffer_size": 13001,
+				"buffer_size": 13045,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -281,7 +285,17 @@
 			"file": "public/design.py",
 			"settings":
 			{
-				"buffer_size": 462,
+				"buffer_size": 437,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "template.py",
+			"settings":
+			{
+				"buffer_size": 1165,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -289,7 +303,7 @@
 			"file": "signals.py",
 			"settings":
 			{
-				"buffer_size": 2341,
+				"buffer_size": 2340,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -299,6 +313,15 @@
 			"settings":
 			{
 				"buffer_size": 17781,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "qt_app.py",
+			"settings":
+			{
+				"buffer_size": 1909,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -316,7 +339,7 @@
 			"file": "py_lib/user_sqlite.py",
 			"settings":
 			{
-				"buffer_size": 4639,
+				"buffer_size": 4923,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -340,10 +363,10 @@
 			}
 		},
 		{
-			"contents": "Searching 32 files for \"des niveau\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n   11  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des matières\",connect2=[\"clicked\",self.view_box_lessons_list]))\n   12  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajout/mise à jour niveau\",connect2=[\"clicked\",self.view_box_levels_create]))\n   13: \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des niveau\",connect2=[\"clicked\",self.view_box_levels_list]))\n   14  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajouter un paiement\",connect2=[\"clicked\",self.view_box_payments_create]))\n   15  \t\n   ..\n  122  \t\tself.tools_remove_items(self.content_grid)\n  123  \t\tgrid = self.content_grid\n  124: \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des niveaux\"),0,0,1,-1)\n  125  \t\tlevels = self.bdd.request(\"SELECT * FROM levels\")\n  126  \t\tif len(levels) == 0:\n\n2 matches in 1 file\n\n\nSearching 32 files for \"format\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\error.py:\n   24  \t\t\t\tmsg = self.u.utxt[self.errors[err_num][\"msg\"]][self.u.ulang]\n   25  \t\t\telse: msg = self.errors[err_num][\"msg\"]\n   26: \t\t\tmsg = '0x{:04x}'.format(err_num) + \" : \" +msg\n   27  \t\t\tif console:\n   28  \t\t\t\tif fields is not None:\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n  160  \t\tgrid.addWidget(self.u.UQcheckbox(checked=True,exclusive=True,name_id=\"price_30\",style=\"label\",title=str(items[0][\"price_30\"]) + \" MAD\",connect2=[\"toggled\",self.sig_price_change]),4,1)\n  161  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Mois concerné\"),5,0)\n  162: \t\tgrid.addWidget(self.u.UQdateedit(name_id=\"selected_period\",popup=True,date_format=\"MMMM yyyy\"),5,1)\n  163  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Remise (MAD)\"),6,0)\n  164  \t\tgrid.addWidget(self.u.UQtxtedit(name_id=\"discount\",title=\"0\",style=\"field\",connect2=[\"changed\",self.sig_price_change]),6,1)\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_qt.py:\n   18  \t\tQMessageBox.critical(parent,title,corpus,QMessageBox.Ok)\n   19  \tif qtype == \"info\":\n   20: \t\tQMessageBox.information(parent,title,corpus,QMessageBox.Ok)\t\t\t\t\n   21  \tif qtype == \"question\":\n   22  \t\tr = QMessageBox.question(parent,title,corpus,QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel, QMessageBox.Cancel)\n   ..\n  339  \t\tpopup = kwargs.get(\"popup\",None)\n  340  \t\tself.setMinimumDate(QDate(2018,9,1))\n  341: \t\tdate_format = kwargs.get(\"date_format\",None)\n  342  \t\tif style is not None: self.setProperty(\"class\",style)\n  343  \t\tif popup is not None: \n  344  \t\t\tif popup == True: self.setCalendarPopup(True)\n  345: \t\tif date_format is not None: self.setDisplayFormat(date_format)\n  346  \tdef txt(self):\n  347  \t\treturn self.date().toString('dd-MM-yyyy')\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sklearn.py:\n   51  \t\t\tfor ii,jj in clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()].items():\n   52  \t\t\t\tif isinstance(jj,str): print(ii,\": \",jj)\n   53: \t\t\t\telse: print(ii,\": {0:9.9f}\".format(jj))\n   54  \t\t\tself.params = clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()]\n   55  \t\telse:\n   ..\n   81  \t\t\tplt.xlabel(\"Flowrates (m3/h)\")\n   82  \t\t\tplt.ylabel(\"Relative uncertainty%\")\n   83: \t\t\tplt.title(model + \" model\" + \" -> \"+\"{:.2%}\".format(s))\n   84  \n   85  \t\t\tplt.grid()\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sqlite.py:\n  140  \t\treturn N\n  141  \n  142: \tdef format_array(self,data):\n  143  \t\twhile (isinstance(data, list) or isinstance(data, tuple)) and len(data) == 1: data = data[0]\n  144  \t\treturn data\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_tdms.py:\n    2  \n    3  class UTdms(TdmsFile):\n    4: \t\"\"\"Classe gérant les formats de fichier tdms\n    5  \n    6  \tCette classe hérite de la classe TdmsFile de la librairie nptdms\n\n12 matches across 6 files\n\n\nSearching 33 files for \"remove\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\tools.py:\n    7  \t\tself.content_view = content_id\n    8  \n    9: \tdef tools_remove_items(self,layout):\n   10  \t\tif layout is not None:\n   11  \t\t    for cnt in reversed(range(layout.count())):\n   ..\n   14  \t\t            w.deleteLater()\n   15  \n   16: \tdef tools_remove_item(self,layGrid=None,line=None,col=None,widname=None):\n   17  \t\t\"\"\"\n   18  \t\t\tSuppression d'élément\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n   22  \t\n   23  \tdef view_box_users_create(self,user_id):\n   24: \t\tself.tools_remove_items(self.content_grid)\n   25  \t\tgrid = self.content_grid\n   26  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Info client\"),0,0,1,-1)\n   ..\n   47  \n   48  \tdef view_box_users_list(self):\n   49: \t\tself.tools_remove_items(self.content_grid)\n   50  \t\tgrid = self.content_grid\n   51  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des clients\"),0,0,1,-1)\n   ..\n   68  \n   69  \tdef view_box_lessons_create(self,lesson_id):\n   70: \t\tself.tools_remove_items(self.content_grid)\n   71  \t\tgrid = self.content_grid\n   72  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter ou mettre à jour une matière\"),0,0,1,-1)\n   ..\n   87  \n   88  \tdef view_box_lessons_list(self):\n   89: \t\tself.tools_remove_items(self.content_grid)\n   90  \t\tgrid = self.content_grid\n   91  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des matières\"),0,0,1,-1)\n   ..\n  108  \n  109  \tdef view_box_levels_create(self,level_id):\n  110: \t\tself.tools_remove_items(self.content_grid)\n  111  \t\tgrid = self.content_grid\n  112  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter ou mettre à jour un niveau\"),0,0,1,-1)\n  ...\n  127  \n  128  \tdef view_box_levels_list(self):\n  129: \t\tself.tools_remove_items(self.content_grid)\n  130  \t\tgrid = self.content_grid\n  131  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des niveaux\"),0,0,1,-1)\n  ...\n  148  \n  149  \tdef view_box_payments_create(self,lesson_id):\n  150: \t\tself.tools_remove_items(self.content_grid)\n  151  \t\tgrid = self.content_grid\n  152  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter un paiement\"),0,0,1,-1)\n  ...\n  175  \n  176  \tdef view_box_payments_list(self):\t\t\n  177: \t\tself.tools_remove_items(self.content_grid)\n  178  \t\tgrid = self.content_grid\n  179  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des paiements\"),0,0,1,-1)\n  ...\n  208  \n  209  \tdef view_box_barcode_create(self):\n  210: \t\tself.tools_remove_items(self.content_grid)\n  211  \t\tgrid = self.content_grid\n  212  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Générer des codes barres\"),0,0,1,-1)\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_qt.py:\n  142  \t\tif nom == 'style':\n  143  \t\t\tif os.path.isfile(val + \"/\" + \"temp.css\"):\n  144: \t\t\t\tos.remove(val + \"/\" + \"temp.css\")\n  145  \t\t\twith open(val + \"/\" + \"temp.css\", 'w') as outfile:\n  146  \t\t\t    l = os.listdir(val)\n\n12 matches across 3 files\n",
+			"contents": "Searching 32 files for \"des niveau\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n   11  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des matières\",connect2=[\"clicked\",self.view_box_lessons_list]))\n   12  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajout/mise à jour niveau\",connect2=[\"clicked\",self.view_box_levels_create]))\n   13: \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Liste des niveau\",connect2=[\"clicked\",self.view_box_levels_list]))\n   14  \t\tself.menu_grid.addWidget(self.u.UQbut(\"MENU_STD_BUT\",title=\"Ajouter un paiement\",connect2=[\"clicked\",self.view_box_payments_create]))\n   15  \t\n   ..\n  122  \t\tself.tools_remove_items(self.content_grid)\n  123  \t\tgrid = self.content_grid\n  124: \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des niveaux\"),0,0,1,-1)\n  125  \t\tlevels = self.bdd.request(\"SELECT * FROM levels\")\n  126  \t\tif len(levels) == 0:\n\n2 matches in 1 file\n\n\nSearching 32 files for \"format\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\error.py:\n   24  \t\t\t\tmsg = self.u.utxt[self.errors[err_num][\"msg\"]][self.u.ulang]\n   25  \t\t\telse: msg = self.errors[err_num][\"msg\"]\n   26: \t\t\tmsg = '0x{:04x}'.format(err_num) + \" : \" +msg\n   27  \t\t\tif console:\n   28  \t\t\t\tif fields is not None:\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n  160  \t\tgrid.addWidget(self.u.UQcheckbox(checked=True,exclusive=True,name_id=\"price_30\",style=\"label\",title=str(items[0][\"price_30\"]) + \" MAD\",connect2=[\"toggled\",self.sig_price_change]),4,1)\n  161  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Mois concerné\"),5,0)\n  162: \t\tgrid.addWidget(self.u.UQdateedit(name_id=\"selected_period\",popup=True,date_format=\"MMMM yyyy\"),5,1)\n  163  \t\tgrid.addWidget(self.u.UQtxt(style=\"label\",title=\"Remise (MAD)\"),6,0)\n  164  \t\tgrid.addWidget(self.u.UQtxtedit(name_id=\"discount\",title=\"0\",style=\"field\",connect2=[\"changed\",self.sig_price_change]),6,1)\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_qt.py:\n   18  \t\tQMessageBox.critical(parent,title,corpus,QMessageBox.Ok)\n   19  \tif qtype == \"info\":\n   20: \t\tQMessageBox.information(parent,title,corpus,QMessageBox.Ok)\t\t\t\t\n   21  \tif qtype == \"question\":\n   22  \t\tr = QMessageBox.question(parent,title,corpus,QMessageBox.Yes | QMessageBox.No | QMessageBox.Cancel, QMessageBox.Cancel)\n   ..\n  339  \t\tpopup = kwargs.get(\"popup\",None)\n  340  \t\tself.setMinimumDate(QDate(2018,9,1))\n  341: \t\tdate_format = kwargs.get(\"date_format\",None)\n  342  \t\tif style is not None: self.setProperty(\"class\",style)\n  343  \t\tif popup is not None: \n  344  \t\t\tif popup == True: self.setCalendarPopup(True)\n  345: \t\tif date_format is not None: self.setDisplayFormat(date_format)\n  346  \tdef txt(self):\n  347  \t\treturn self.date().toString('dd-MM-yyyy')\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sklearn.py:\n   51  \t\t\tfor ii,jj in clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()].items():\n   52  \t\t\t\tif isinstance(jj,str): print(ii,\": \",jj)\n   53: \t\t\t\telse: print(ii,\": {0:9.9f}\".format(jj))\n   54  \t\t\tself.params = clf.cv_results_[\"params\"][clf.cv_results_[\"mean_test_score\"].argmax()]\n   55  \t\telse:\n   ..\n   81  \t\t\tplt.xlabel(\"Flowrates (m3/h)\")\n   82  \t\t\tplt.ylabel(\"Relative uncertainty%\")\n   83: \t\t\tplt.title(model + \" model\" + \" -> \"+\"{:.2%}\".format(s))\n   84  \n   85  \t\t\tplt.grid()\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sqlite.py:\n  140  \t\treturn N\n  141  \n  142: \tdef format_array(self,data):\n  143  \t\twhile (isinstance(data, list) or isinstance(data, tuple)) and len(data) == 1: data = data[0]\n  144  \t\treturn data\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_tdms.py:\n    2  \n    3  class UTdms(TdmsFile):\n    4: \t\"\"\"Classe gérant les formats de fichier tdms\n    5  \n    6  \tCette classe hérite de la classe TdmsFile de la librairie nptdms\n\n12 matches across 6 files\n\n\nSearching 33 files for \"remove\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\tools.py:\n    7  \t\tself.content_view = content_id\n    8  \n    9: \tdef tools_remove_items(self,layout):\n   10  \t\tif layout is not None:\n   11  \t\t    for cnt in reversed(range(layout.count())):\n   ..\n   14  \t\t            w.deleteLater()\n   15  \n   16: \tdef tools_remove_item(self,layGrid=None,line=None,col=None,widname=None):\n   17  \t\t\"\"\"\n   18  \t\t\tSuppression d'élément\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\views.py:\n   22  \t\n   23  \tdef view_box_users_create(self,user_id):\n   24: \t\tself.tools_remove_items(self.content_grid)\n   25  \t\tgrid = self.content_grid\n   26  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Info client\"),0,0,1,-1)\n   ..\n   47  \n   48  \tdef view_box_users_list(self):\n   49: \t\tself.tools_remove_items(self.content_grid)\n   50  \t\tgrid = self.content_grid\n   51  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des clients\"),0,0,1,-1)\n   ..\n   68  \n   69  \tdef view_box_lessons_create(self,lesson_id):\n   70: \t\tself.tools_remove_items(self.content_grid)\n   71  \t\tgrid = self.content_grid\n   72  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter ou mettre à jour une matière\"),0,0,1,-1)\n   ..\n   87  \n   88  \tdef view_box_lessons_list(self):\n   89: \t\tself.tools_remove_items(self.content_grid)\n   90  \t\tgrid = self.content_grid\n   91  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des matières\"),0,0,1,-1)\n   ..\n  108  \n  109  \tdef view_box_levels_create(self,level_id):\n  110: \t\tself.tools_remove_items(self.content_grid)\n  111  \t\tgrid = self.content_grid\n  112  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter ou mettre à jour un niveau\"),0,0,1,-1)\n  ...\n  127  \n  128  \tdef view_box_levels_list(self):\n  129: \t\tself.tools_remove_items(self.content_grid)\n  130  \t\tgrid = self.content_grid\n  131  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des niveaux\"),0,0,1,-1)\n  ...\n  148  \n  149  \tdef view_box_payments_create(self,lesson_id):\n  150: \t\tself.tools_remove_items(self.content_grid)\n  151  \t\tgrid = self.content_grid\n  152  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Ajouter un paiement\"),0,0,1,-1)\n  ...\n  175  \n  176  \tdef view_box_payments_list(self):\t\t\n  177: \t\tself.tools_remove_items(self.content_grid)\n  178  \t\tgrid = self.content_grid\n  179  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Liste des paiements\"),0,0,1,-1)\n  ...\n  208  \n  209  \tdef view_box_barcode_create(self):\n  210: \t\tself.tools_remove_items(self.content_grid)\n  211  \t\tgrid = self.content_grid\n  212  \t\tgrid.addWidget(self.u.UQtxt(\"BOX_STD_TITLE\",title=\"Générer des codes barres\"),0,0,1,-1)\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_qt.py:\n  142  \t\tif nom == 'style':\n  143  \t\t\tif os.path.isfile(val + \"/\" + \"temp.css\"):\n  144: \t\t\t\tos.remove(val + \"/\" + \"temp.css\")\n  145  \t\t\twith open(val + \"/\" + \"temp.css\", 'w') as outfile:\n  146  \t\t\t    l = os.listdir(val)\n\n12 matches across 3 files\n\n\nSearching 33 files for \"0X0002\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\public\\error.py:\n    2  err = {\n    3  \t0x0001:{\"group\":\"Formulaire\",\"msg\":\"Un des champs est vide\"},\n    4: \t0X0002:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type INTEGER\"},\n    5  \t0X0003:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type DOUBLE\"},\n    6  \t0X0020:{\"group\":\"Périphériques\",\"msg\":\"Vous devez d'abord configurer la souris\"},\n\n1 match in 1 file\n\n\nSearching 33 files for \"0X0002\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\public\\error.py:\n    2  err = {\n    3  \t0x0001:{\"group\":\"Formulaire\",\"msg\":\"Un des champs est vide\"},\n    4: \t0X0002:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type INTEGER\"},\n    5  \t0X0003:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type DOUBLE\"},\n    6  \t0X0020:{\"group\":\"Périphériques\",\"msg\":\"Vous devez d'abord configurer la souris\"},\n\n1 match in 1 file\n\n\nSearching 33 files for \"check_values\"\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\signals.py:\n   25  \t\t\t\tif i[\"name\"] == field_id and not val.txt(): continue  \n   26  \t\t\t\tdata[i[\"name\"]] = val.txt()\n   27: \t\tif self.error_manage(self.bdd.check_values(table_name,data)): return\n   28  \t\tprint(data)\n   29  \t\tif field_id in data:\n\nC:\\Users\\agoum\\Documents\\Programmation\\Python\\cours_soutien\\py_lib\\user_sqlite.py:\n   43  \t\treturn s\n   44  \n   45: \tdef check_values(self,table_name,val_dict):\n   46  \t\tcols_info = self.cols_info(table_name)\n   47  \t\tfor i in cols_info:\n\n2 matches across 2 files\n",
 			"settings":
 			{
-				"buffer_size": 6992,
+				"buffer_size": 8538,
 				"line_ending": "Windows",
 				"name": "Find Results",
 				"scratch": true
@@ -354,6 +377,18 @@
 			"settings":
 			{
 				"buffer_size": 1445,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\nerr = {\n\t0x0001:{\"group\":\"Formulaire\",\"msg\":\"Un champs requis est vide\"},\n\t0X0002:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type INTEGER\"},\n\t0X0003:{\"group\":\"Formulaire\",\"msg\":\"Le champs n'a pas le type DOUBLE\"},\n\t0X0004:{\"group\":\"Formulaire\",\"msg\":\"Le numéro de téléphone ne contient pas assez de chiffre\"},\n\t0X0005:{\"group\":\"Formulaire\",\"msg\":\"Le numéro de téléphone contient trop de chiffre\"},\n\t0X0020:{\"group\":\"Périphériques\",\"msg\":\"Vous devez d'abord configurer la souris\"},\n}\n\n\n",
+			"file": "public/error.py",
+			"file_size": 512,
+			"file_write_time": 131814830435362504,
+			"settings":
+			{
+				"buffer_size": 493,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -470,7 +505,8 @@
 	[
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/css",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public"
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib"
 	],
 	"file_history":
 	[
@@ -524,7 +560,7 @@
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 42.4
 	},
 	"find_in_files":
 	{
@@ -539,6 +575,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"check_values",
+			"0X0002",
 			"remove",
 			"print_pd",
 			"icon",
@@ -586,7 +624,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -616,7 +654,7 @@
 						"translation.y": 186.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -625,15 +663,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13001,
+						"buffer_size": 13045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11962,
-								11962
+								12762,
+								12762
 							]
 						],
 						"settings":
@@ -675,6 +713,10 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								}
 							],
 							"git_gutter_is_enabled": true,
@@ -682,10 +724,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4060.0,
+						"translation.y": 4220.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -694,15 +736,56 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 462,
+						"buffer_size": 437,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								53,
-								53
+								435,
+								435
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "template.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								506,
+								506
 							]
 						],
 						"settings":
@@ -715,24 +798,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "signals.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2341,
+						"buffer_size": 2340,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2260,
-								2261
+								2340,
+								2340
 							]
 						],
 						"settings":
@@ -764,15 +847,15 @@
 							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 980.0,
+						"translation.x": 270.4,
+						"translation.y": 550.4,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "py_lib/user_qt.py",
 					"semi_transient": false,
 					"settings":
@@ -822,14 +905,44 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 820.0,
+						"translation.y": 2486.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
+					"file": "qt_app.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1909,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1201,
+								1201
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 761.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "css/4_icon.css",
 					"semi_transient": false,
 					"settings":
@@ -854,24 +967,24 @@
 						"translation.y": 317.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "py_lib/user_sqlite.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4639,
+						"buffer_size": 4923,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2001,
-								2001
+								2225,
+								2225
 							]
 						],
 						"settings":
@@ -889,6 +1002,14 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								}
 							],
 							"git_gutter_is_enabled": true,
@@ -896,14 +1017,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 834.0,
+						"translation.y": 846.4,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "tools.py",
 					"semi_transient": false,
 					"settings":
@@ -937,14 +1058,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 909.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "cours_soutien.py",
 					"semi_transient": false,
 					"settings":
@@ -956,8 +1077,8 @@
 						"selection":
 						[
 							[
-								166,
-								166
+								165,
+								165
 							]
 						],
 						"settings":
@@ -971,6 +1092,10 @@
 								{
 									"characters": ".",
 									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
 								}
 							],
 							"git_gutter_is_enabled": true,
@@ -980,15 +1105,15 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 11,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6992,
+						"buffer_size": 8538,
 						"regions":
 						{
 							"match":
@@ -1099,6 +1224,22 @@
 									[
 										6839,
 										6845
+									],
+									[
+										7197,
+										7203
+									],
+									[
+										7664,
+										7670
+									],
+									[
+										8183,
+										8195
+									],
+									[
+										8395,
+										8407
 									]
 								],
 								"scope": ""
@@ -1107,8 +1248,8 @@
 						"selection":
 						[
 							[
-								4120,
-								4126
+								8144,
+								8150
 							]
 						],
 						"settings":
@@ -1117,7 +1258,7 @@
 							"detect_indentation": false,
 							"git_gutter_is_enabled": false,
 							"line_numbers": false,
-							"output_tag": 3,
+							"output_tag": 6,
 							"result_base_dir": "",
 							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
@@ -1125,14 +1266,14 @@
 							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1821.0,
+						"translation.y": 3940.8,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 12,
 					"file": "error.py",
 					"semi_transient": false,
 					"settings":
@@ -1155,14 +1296,58 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 37.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 13,
+					"file": "public/error.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 493,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								324
+							]
+						],
+						"settings":
+						{
+							"auto_complete_triggers":
+							[
+								{
+									"characters": ".",
+									"selector": "source.python - string - comment - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								},
+								{
+									"characters": ".",
+									"selector": "source.python - string - constant.numeric"
+								}
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
 					"file": "public/lang.py",
 					"semi_transient": false,
 					"settings":
@@ -1199,7 +1384,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 14,
 					"type": "text"
 				}
 			]
@@ -1266,6 +1451,34 @@
 		"selected_items":
 		[
 			[
+				"qt",
+				"qt_app.py"
+			],
+			[
+				"pub ",
+				"public\\error.py"
+			],
+			[
+				"erro",
+				"error.py"
+			],
+			[
+				"sql",
+				"py_lib\\user_sqlite.py"
+			],
+			[
+				"user_",
+				"py_lib\\user_qt.py"
+			],
+			[
+				"tem",
+				"template.py"
+			],
+			[
+				"des",
+				"public\\design.py"
+			],
+			[
 				"app",
 				"public\\app_style.py"
 			],
@@ -1326,20 +1539,12 @@
 				"py_lib\\user_qt.py"
 			],
 			[
-				"sql",
-				"py_lib\\user_sqlite.py"
-			],
-			[
 				"user sa",
 				"py_lib\\user_sklearn.py"
 			],
 			[
 				"sign",
 				"signals.py"
-			],
-			[
-				"qt",
-				"qt_app.py"
 			],
 			[
 				"vi",
@@ -1382,10 +1587,6 @@
 				"error.py"
 			],
 			[
-				"erro",
-				"error.py"
-			],
-			[
 				"flo",
 				"flodas_app.py"
 			],
@@ -1408,7 +1609,7 @@
 		[
 			[
 				"",
-				"C:\\Users\\agoum\\Documents\\Programmation\\Python\\maria_mode\\maria_mode.sublime-project"
+				"C:\\Users\\agoum\\Documents\\Programmation\\Python\\remote_msg\\remote_msgs.sublime-project"
 			]
 		],
 		"width": 475.2
