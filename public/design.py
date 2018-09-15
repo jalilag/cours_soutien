@@ -7,7 +7,7 @@ class Design:
 		Grid.setLayout(layGrid)
 		if isinstance(parent_grid,QGridLayout):
 			parent_grid.addWidget(Grid,row,col,Lrow,Lcol)
-		else : 
+		else :
 			parent_grid.addWidget(Grid,row)
 		return layGrid
 

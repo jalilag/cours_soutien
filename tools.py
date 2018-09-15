@@ -10,7 +10,7 @@ class Tools:
 		if layout is not None:
 		    for cnt in reversed(range(layout.count())):
 		        w = layout.takeAt(cnt).widget()
-		        if w is not None: 
+		        if w is not None:
 		            w.deleteLater()
 
 	def tools_remove_item(self,layGrid=None,line=None,col=None,widname=None):

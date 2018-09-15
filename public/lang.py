@@ -17,4 +17,8 @@ txt = {
 	"total_price":{"fr":"Prix total"},
 	"selected_period":{"fr":"Mois concerné"},
 	"payment_date":{"fr":"Date de paiement"},
+	"level_id":{"fr":"id"},
+	"user_id":{"fr":"id"},
+	"payment_id":{"fr":"id"},
+	"lesson_id":{"fr":"id"},
 }

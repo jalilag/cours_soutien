@@ -27,9 +27,9 @@ sty = {
 	"BUT_DISCONNECT_TEST":		{"title":"DISCONNECT","style":"stdButtonMenu red disconnect"},
 	"BUT_DISCONNECT":		{"title":"DISCONNECT","style":"stdButton red disconnect"},
 	"BUT_EDIT":			   	{"tooltip":"EDIT", "style":"stdButton light_blue edit"},
-	"BUT_EQ_CONF":	   	   	{"title":"EQUIP","style":"stdButtonMenu light_blue equipment"},		
+	"BUT_EQ_CONF":	   	   	{"title":"EQUIP","style":"stdButtonMenu light_blue equipment"},
 	"BUT_EX_CONF":	   	   	{"title":"EXPANSION","style":"stdButtonMenu light_blue expansion"},
-	"BUT_GET_INFO_TEST":			{"title":"INFO","style":"stdButtonMenu green update"},				
+	"BUT_GET_INFO_TEST":			{"title":"INFO","style":"stdButtonMenu green update"},
 	"BUT_IN_OUT_CONF":	   	{"title":"IN_OUT","style":"stdButtonMenu light_blue in_out"},
 	"BUT_MONITORING_CONF": 	{"title":"MONITORING","style":"stdButtonMenu light_blue monitoring"},
 	"BUT_NODE_CONF":  	   	{"title":"MODULE","style":"stdButtonMenu light_blue module"},
@@ -47,7 +47,7 @@ sty = {
 	"BUT_UNI_CIRCUIT_CONF": {"title":"UNI_CIRCUIT","style":"stdButtonMenu light_blue circuit"},
 	"BUT_UPDATE":			{"style":"stdButton light_blue update"},
 	"BUT_VISU_CONF":		{"title":"VISU","style":"stdButtonMenu light_blue visu"},
-	
+
 	"FIELD":				{"style":"field","title":""},
 
 	"LAB_ANA_TYPE":     {"title":"ANA_TYPE","style":"label"},

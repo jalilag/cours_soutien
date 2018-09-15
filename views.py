@@ -11,14 +11,41 @@ class Views:
 	def view_menu(self):
 		self.menu_grid.addWidget(self.u.UQtxt("MENU_STD_TITLE",title="Choisissez une action"),0,0,1,-1)
 		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour client",connect2=["clicked",self.view_box_users_create]),1,0)
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des clients",connect2=["clicked",self.view_box_users_list]),1,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des clients",connect2=["clicked",partial(self.view_generic_list,self.content_grid,"Liste des clients","users",True)]),1,1)
 		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour matière",connect2=["clicked",self.view_box_lessons_create]),2,0)
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des matières",connect2=["clicked",self.view_box_lessons_list]),2,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des matières",connect2=["clicked",partial(self.view_generic_list,self.content_grid,"Liste des lessons","lessons",True)]),2,1)
 		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajout/mise à jour niveau",connect2=["clicked",self.view_box_levels_create]),3,0)
-		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des niveaux",connect2=["clicked",self.view_box_levels_list]),3,1)
+		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Liste des niveaux",connect2=["clicked",partial(self.view_generic_list,self.content_grid,"Liste des niveaux","levels",True)]),3,1)
 		self.menu_grid.addWidget(self.u.UQbut("MENU_STD_BUT",title="Ajouter un paiement",connect2=["clicked",self.view_box_payments_create]),4,0)
-		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_payments_list]),4,1)
+		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",partial(self.view_generic_list,self.content_grid,"Liste des paiements","payments",True)]),4,1)
 		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_barcode_create]),5,0)
+
+	def view_generic_list(self,grid,title,table_name,be_deleted):
+		print("be_deleted",be_deleted)
+		self.tools_remove_items(self.content_grid)
+		cols_infos = self.bdd.cols_info(table_name)
+		field_id = None
+		for i in cols_infos:
+			for j,k in i.items():
+				if j == "pk" and k: field_id = i["name"]
+		if field_id is None: return
+		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title=title),0,0,1,-1)
+		items = self.bdd.request("SELECT * FROM " + table_name)
+		if len(items) == 0:
+			grid.addWidget(self.u.UQtxt(style="label",title="Aucun élément"),1,0)
+			return
+		items_cols = list(items[0].keys())
+		if be_deleted: items_cols.append("dels")
+		for i,j in enumerate(items_cols):
+			if j not in ["dels","field_id"]:
+				grid.addWidget(self.u.UQtxt(style="label",title=j),1,i)
+			ii = 1
+			for k in items:
+				ii += 1
+				if j == "dels":
+					grid.addWidget(self.u.UQbut("BUT_DEL",connect2=["clicked",partial(self.sig_del_field,table_name,field_id+"="+str(k[field_id]),partial(self.view_generic_list,grid,title,table_name,be_deleted))]),ii,i)
+				else:
+					grid.addWidget(self.u.UQtxt(style="field",title=k[j]),ii,i)
 
 	def view_box_users_create(self,user_id):
 		self.tools_remove_items(self.content_grid)
@@ -43,28 +70,8 @@ class Views:
 				grid.addWidget(self.u.UQplaintxtedit(name_id=i,style="field",title=j),ii,1,1,2)
 			else:
 				grid.addWidget(self.u.UQtxtedit(name_id=i,style="field",title=j),ii,1)
-		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"users","user_id",self.view_box_users_list)]),ii+1,0)
+		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"users","user_id",partial(self.view_generic_list,self.content_grid,"Liste des clients","users",True))]),ii+1,0)
 
-	def view_box_users_list(self):
-		self.tools_remove_items(self.content_grid)
-		grid = self.content_grid
-		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title="Liste des clients"),0,0,1,-1)
-		users = self.bdd.request("SELECT user_id,email,firstname,lastname,phone1,phone2,address,l.title as level FROM users LEFT JOIN levels l USING(level_id)")
-		if len(users) == 0:
-			grid.addWidget(self.u.UQtxt(style="label",title="Aucun clients"),1,0)
-			return
-		users_cols = list(users[0].keys())
-		users_cols.append("dels")
-		for i,j in enumerate(users_cols):
-			if j not in ["dels","user_id"]:
-				grid.addWidget(self.u.UQtxt(style="label",title=j),1,i)
-			ii = 1
-			for k in users:
-				ii += 1
-				if j == "dels":
-					grid.addWidget(self.u.UQbut("BUT_DEL",connect2=["clicked",partial(self.sig_del_field,"users","user_id="+str(k["user_id"]),self.view_box_users_list)]),ii,i)
-				else:
-					grid.addWidget(self.u.UQtxt(style="field",title=k[j]),ii,i)
 
 	def view_box_lessons_create(self,lesson_id):
 		self.tools_remove_items(self.content_grid)
@@ -83,28 +90,7 @@ class Views:
 			ii += 1
 			grid.addWidget(self.u.UQtxt(style="label",title=self.u.get_text(i)),ii,0)
 			grid.addWidget(self.u.UQtxtedit(name_id=i,style="field",title=j),ii,1)
-		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"lessons","lesson_id",self.view_box_lessons_list)]),ii+1,0)
-
-	def view_box_lessons_list(self):
-		self.tools_remove_items(self.content_grid)
-		grid = self.content_grid
-		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title="Liste des matières"),0,0,1,-1)
-		lessons = self.bdd.request("SELECT * FROM lessons")
-		if len(lessons) == 0:
-			grid.addWidget(self.u.UQtxt(style="label",title="Aucunes matières"),1,0)
-			return
-		lessons_cols = list(lessons[0].keys())
-		lessons_cols.append("dels")
-		for i,j in enumerate(lessons_cols):
-			if j not in ["dels","lesson_id"]:
-				grid.addWidget(self.u.UQtxt(style="label",title=j),1,i)
-			ii = 1
-			for k in lessons:
-				ii += 1
-				if j == "dels":
-					grid.addWidget(self.u.UQbut("BUT_DEL",connect2=["clicked",partial(self.sig_del_field,"lessons","lesson_id="+str(k["lesson_id"]),self.view_box_lessons_list)]),ii,i)
-				else:
-					grid.addWidget(self.u.UQtxt(style="field",title=k[j]),ii,i)
+		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"lessons","lesson_id",partial(self.view_generic_list,self.content_grid,"Liste des matières","lessons",True))]),ii+1,0)
 
 	def view_box_levels_create(self,level_id):
 		self.tools_remove_items(self.content_grid)
@@ -123,28 +109,7 @@ class Views:
 			ii += 1
 			grid.addWidget(self.u.UQtxt(style="label",title=self.u.get_text(i)),ii,0)
 			grid.addWidget(self.u.UQtxtedit(name_id=i,style="field",title=j),ii,1)
-		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"levels","level_id",self.view_box_levels_list)]),ii+1,0)
-
-	def view_box_levels_list(self):
-		self.tools_remove_items(self.content_grid)
-		grid = self.content_grid
-		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title="Liste des niveaux"),0,0,1,-1)
-		levels = self.bdd.request("SELECT * FROM levels")
-		if len(levels) == 0:
-			grid.addWidget(self.u.UQtxt(style="label",title="Aucun  niveau"),1,0)
-			return
-		levels_cols = list(levels[0].keys())
-		levels_cols.append("dels")
-		for i,j in enumerate(levels_cols):
-			if j not in ["dels","level_id"]:
-				grid.addWidget(self.u.UQtxt(style="label",title=j),1,i)
-			ii = 1
-			for k in levels:
-				ii += 1
-				if j == "dels":
-					grid.addWidget(self.u.UQbut("BUT_DEL",connect2=["clicked",partial(self.sig_del_field,"levels","level_id="+str(k["level_id"]),self.view_box_levels_list)]),ii,i)
-				else:
-					grid.addWidget(self.u.UQtxt(style="field",title=k[j]),ii,i)
+		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"levels","level_id",partial(self.view_generic_list,self.content_grid,"Liste des niveaux","levels",True))]),ii+1,0)
 
 	def view_box_payments_create(self,lesson_id):
 		self.tools_remove_items(self.content_grid)
@@ -170,41 +135,8 @@ class Views:
 		grid.addWidget(self.u.UQtxtedit(name_id="discount",title="0",style="field",connect2=["changed",self.sig_price_change]),6,1)
 		grid.addWidget(self.u.UQtxt(style="label",title="Prix total (MAD)"),7,0)
 		grid.addWidget(self.u.UQtxt(name_id="total_price",style="label"),7,1)
-		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"payments","payment_id",self.view_box_payments_list)]),8,0)
+		grid.addWidget(self.u.UQbut("STD_BUTTON",title="Sauvegarder",connect2=["clicked",partial(self.sig_create,"payments","payment_id",partial(self.view_generic_list,self.content_grid,"Liste des paiements","payments",True))]),8,0)
 		self.sig_price_change()
-
-	def view_box_payments_list(self):		
-		self.tools_remove_items(self.content_grid)
-		grid = self.content_grid
-		grid.addWidget(self.u.UQtxt("BOX_STD_TITLE",title="Liste des paiements"),0,0,1,-1)
-		payments = self.bdd.request("""
-			SELECT p.payment_id as payment_id,printf('%s %s',u.firstname,u.lastname) as user
-			, payment_date, selected_period
-			, CASE WHEN p.price_30 THEN 'price_30' ELSE 'price_15' END price_duration
-			, CASE WHEN p.price_30 THEN l.price_30 ELSE l.price_15 END price
-			, p.discount, p.total_price
-			FROM payments p
-			JOIN lessons l USING(lesson_id)
-			JOIN users u USING(user_id)
-			""")
-		if len(payments) == 0:
-			grid.addWidget(self.u.UQtxt(style="label",title="Aucun payment"),1,0)
-			return
-		payments_cols = list(payments[0].keys())
-		payments_cols.append("dels")
-		for i,j in enumerate(payments_cols):
-			if j not in ["dels","payment_id"]:
-				grid.addWidget(self.u.UQtxt(style="label",title=j),1,i)
-			ii = 1
-			for k in payments:
-				ii += 1
-				if j == "selected_period": k[j] = QDate.fromString(k[j],'yyyy-MM-dd').toString("MMMM yyyy")
-
-				if j == "payment_date": k[j] = QDate.fromString(k[j],'yyyy-MM-dd').toString("dd/MM/yyyy")
-				if j == "dels":
-					grid.addWidget(self.u.UQbut("BUT_DEL",connect2=["clicked",partial(self.sig_del_field,"payments","payment_id="+str(k["payment_id"]),self.view_box_payments_list)]),ii,i)
-				else:
-					grid.addWidget(self.u.UQtxt(style="field",title=k[j]),ii,i)
 
 	def view_box_barcode_create(self):
 		self.tools_remove_items(self.content_grid)

@@ -13,11 +13,11 @@ includefiles = ["css","tcl86t.dll","remote.ico","tk86t.dll","start.bat"]
 
 # niveau d'optimisation pour la compilation en bytecodes
 optimize = 0
-  
+
 # si True, n'affiche que les warning et les erreurs pendant le traitement cx_freeze
 silent = True
 
-path = sys.path 
+path = sys.path
 path.append('C:/Users/agoum/Documents/Programmation/python/remote_msgs')
 
 # construction du dictionnaire des options

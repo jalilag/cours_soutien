@@ -4,9 +4,9 @@ QWidget {
 
 .label {
 	font-weight: bold;
-	margin: 0.2em 0 0.2em 0; 
+	margin: 0.2em 0 0.2em 0;
 }
-.cred { 
+.cred {
 	color:#fff;
 }
 .black {color: #000;}
@@ -19,7 +19,7 @@ QWidget {
 }
 
 .center {
-	qproperty-alignment: AlignCenter;	
+	qproperty-alignment: AlignCenter;
 }
 
 .field {

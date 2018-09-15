@@ -18,7 +18,7 @@
 }
 .stdBoxLegend {
 	border: 0.2em solid;
-	border-radius:0.7em;	
+	border-radius:0.7em;
 }
 .stdBoxLegend > .boxLegend {
 	margin:0;
@@ -48,14 +48,14 @@
 /*	qproperty-alignment: AlignTop;
 */}
 .stdSubBox * {
-	margin-left: 0.2em;	
+	margin-left: 0.2em;
 }
 .stdSubBox > .subBoxTitle {
 	margin:0;
 	font-size:13px;
 	font-weight: bold;
 	width:100%;
-	background:qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #263238, stop:1 #546E7A); 
+	background:qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #263238, stop:1 #546E7A);
 	padding: 0.1em 0 0.1em 0.5em;
 	color:#fff;
 }
@@ -75,7 +75,7 @@
 .radioBox {
     border: 3px solid #000;
     border-radius: 9px;
- 
+
     /*background: #4ACFDB;*/
     margin: 0.5em 0.5em 0.5em 0;
 }

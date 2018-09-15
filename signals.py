@@ -12,7 +12,7 @@ class Signals:
 	def sig_change(self,field,func):
 		grid = self.content_grid
 		w = self.content_grid.get_widget_by_name(field)
-		if w is not None: 
+		if w is not None:
 			func(w.currentData())
 
 	def sig_create(self,table_name,field_id,func=None):
@@ -22,14 +22,14 @@ class Signals:
 		for i in cols:
 			val = grid.get_widget_by_name(i["name"])
 			if val is not None:
-				if i["name"] == field_id and not val.txt(): continue  
+				if i["name"] == field_id and not val.txt(): continue
 				data[i["name"]] = val.txt()
 		if self.error_manage(self.bdd.check_values(table_name,data)): return
 		print(data)
 		if field_id in data:
-			self.bdd.update(table_name,list(data.keys()),list(data.values()),field_id+"="+data[field_id]) 
+			self.bdd.update(table_name,list(data.keys()),list(data.values()),field_id+"="+data[field_id])
 		else:
-			self.bdd.insert(table_name,list(data.keys()),list(data.values())) 
+			self.bdd.insert(table_name,list(data.keys()),list(data.values()))
 		if func: func()
 
 	def sig_del_field(self,table_name,where,callback = None):
