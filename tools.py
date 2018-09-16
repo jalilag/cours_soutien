@@ -37,7 +37,6 @@ class Tools:
 		mouse = pymouse.Controller()
 		keyboard = pykeyboard.Controller()
 		for i in word:
-			print(i)
 			if i == '\n':
 				keyboard.press(pykeyboard.Key.enter)
 				keyboard.release(pykeyboard.Key.enter)

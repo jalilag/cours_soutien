@@ -279,6 +279,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "css/2_box.css",
+			"settings":
+			{
+				"buffer_size": 1611,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -328,6 +336,10 @@
 		"selected_items":
 		[
 			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
 				"pre",
 				"Preferences: Settings"
 			],
@@ -338,10 +350,6 @@
 			[
 				"prefere",
 				"Preferences: Settings"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"list",
@@ -387,22 +395,31 @@
 	],
 	"file_history":
 	[
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public/app_style.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/views.py",
+		"/C/Users/agoum/AppData/Roaming/Sublime Text 3/Packages/TrailingSpaces/trailing_spaces.sublime-settings",
+		"/C/Users/agoum/AppData/Roaming/Sublime Text 3/Packages/User/trailing_spaces.sublime-settings",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/processing.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/error.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/build.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/app_qt.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_vectools.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_tdms.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_sqlite.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_sklearn.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_qt.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public/design.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public/app_style.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/css/2_box.css",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/css/1_general.css",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/qt_app.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/signals.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/tools.py",
+		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/views.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/template.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public/lang.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/public/error.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/error.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/signals.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_qt.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/qt_app.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/css/4_icon.css",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_sqlite.py",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/tools.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/cours_soutien.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/css/temp.css",
-		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/py_lib/user_sklearn.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/check.py",
 		"/C/Users/agoum/Documents/Programmation/Python/cours_soutien/.gitignore",
 		"/C/Users/agoum/OneDrive/Documents/Programmation/Python/maria_mode/qt_app.py",
@@ -504,8 +521,39 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "css/2_box.css",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Djaneiro/Syntaxes/CSS (Django).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -569,6 +617,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"qyt",
+				"qt_app.py"
+			],
 			[
 				"lan",
 				"public\\lang.py"

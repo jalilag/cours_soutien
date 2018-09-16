@@ -21,7 +21,6 @@ class Views:
 		self.menu_grid.addWidget(self.u.UQbut('MENU_STD_BUT',title="Liste des paiements",connect2=["clicked",self.view_box_barcode_create]),5,0)
 
 	def view_generic_list(self,grid,title,table_name,be_deleted):
-		print("be_deleted",be_deleted)
 		self.tools_remove_items(self.content_grid)
 		cols_infos = self.bdd.cols_info(table_name)
 		field_id = None

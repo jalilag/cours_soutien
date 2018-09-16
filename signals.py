@@ -25,7 +25,6 @@ class Signals:
 				if i["name"] == field_id and not val.txt(): continue
 				data[i["name"]] = val.txt()
 		if self.error_manage(self.bdd.check_values(table_name,data)): return
-		print(data)
 		if field_id in data:
 			self.bdd.update(table_name,list(data.keys()),list(data.values()),field_id+"="+data[field_id])
 		else:
